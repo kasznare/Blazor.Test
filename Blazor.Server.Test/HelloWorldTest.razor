@@ -1,0 +1,18 @@
+﻿@inherits Bunit.TestComponentBase
+<Fixture Test="HelloWorldComponentRendersCorrectly">
+    <ComponentUnderTest>
+        <Blazor.Server.Pages.HelloWorld />
+    </ComponentUnderTest>
+
+    @code
+    {
+        void HelloWorldComponentRendersCorrectly(Fixture fixture)
+        {
+            // Act
+            var cut = fixture.GetComponentUnderTest();
+
+            // Assert
+            cut.MarkupMatches("<h1>Hello world from Blazor</h1>");
+        }
+    }
+</Fixture>
